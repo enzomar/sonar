@@ -1,11 +1,18 @@
+# SonarQube in local (community edition)
+
+The following guide, alldescribe how to run in a contaner the community version of SonarQube. Languages suported:
+
+
+![langs](images/langs.png)
+
 ## Prerequisites
 
 You need to install
 
 - docker
-- docker-copose 
+- docker-compose 
 
-For MAC
+For Mac Osx
 ```bash
 brew install docker
 brew install docker-compose
@@ -40,23 +47,22 @@ Select **Manually** and fill the next form as following
 
 ![create](images/test.png)
 
-and select to analyze the repository locally
+Click **Set Up.** and select to analyze the repository locally
 
 ![analysis](images/analysis.png)
 
-Then click on "generate"
+Then click on **Generate**.
 
 ![generate](images/generate.png)
 
-And finally keep not of the TOKEN (ie. sqp_4089e3b40374e096cd9dd7769fa31cf6b04fe1da
+Finally keep note of the TOKEN (ie. sqp_4089e3b40374e096cd9dd7769fa31cf6b04fe1da
 
 ![token](images/token.png)
 
-you will use in the next step. Click Continue.
+you will use in the next step.
 
 ## Run
-
-Go to the project folder you want to scan
+In a new terminal, go to the source folder you want to scan
 
 ```bash
 cd ${SOURCEPATH}
@@ -72,6 +78,8 @@ you need to run form the source folder the following
 ```bash
 docker run --rm --network="host" -v "$(pwd):/data" noenv/sonar-scanner sonar-scanner -D sonar.projectKey=test -D sonar.host.url=http://127.0.0.1:9000 -D sonar.login=sqp_5737388298059550c4fc8a255f4208a734d468e9 -D sonar.language=php -D sonar.sources=.
 ```
+
+Execute it.
 
 ## Results
 
