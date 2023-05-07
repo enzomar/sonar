@@ -72,3 +72,8 @@ you need to run form the source folder the following
 ```bash
 docker run --rm --network="host" -v "$(pwd):/data" noenv/sonar-scanner sonar-scanner -D sonar.projectKey=test -D sonar.host.url=http://127.0.0.1:9000 -D sonar.login=sqp_5737388298059550c4fc8a255f4208a734d468e9 -D sonar.language=php -D sonar.sources=.
 ```
+
+## Results
+
+
+![results](images/results.png)
